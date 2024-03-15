@@ -24,30 +24,30 @@ jobs:
     - name: Run Python script
       run: python app.py
  
-  js_job:
-    runs-on: ubuntu-latest
+  # js_job:
+  #   runs-on: ubuntu-latest
  
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+  #   steps:
+  #   - name: Checkout code
+  #     uses: actions/checkout@v4
  
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+  #   - name: Set up Node.js
+  #     uses: actions/setup-node@v2
+  #     with:
+  #       node-version: '14'
  
-    - name: Run JavaScript file
-      run: node testjavascript.js
+  #   - name: Run JavaScript file
+  #     run: node testjavascript.js
  
-  script_job:
-    runs-on: ubuntu-latest
+  # script_job:
+  #   runs-on: ubuntu-latest
  
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+  #   steps:
+  #   - name: Checkout code
+  #     uses: actions/checkout@v4
  
-    - name: Run multiline script
-      run: |
-        echo "This is a multiline script."
-        echo "It can have multiple commands."
-        echo "For example, you can run shell commands here."
+  #   - name: Run multiline script
+  #     run: |
+  #       echo "This is a multiline script."
+  #       echo "It can have multiple commands."
+  #       echo "For example, you can run shell commands here."
