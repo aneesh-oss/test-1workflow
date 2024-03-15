@@ -1,0 +1,53 @@
+name: Multi-language Workflow for testing
+ 
+on:
+  push:
+    branches:
+      - main
+ 
+jobs:
+  python_job:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9]
+ 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+ 
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+ 
+    - name: Run Python script
+      run: python app.py
+ 
+  js_job:
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+ 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+ 
+    - name: Run JavaScript file
+      run: node testjavascript.js
+ 
+  script_job:
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+ 
+    - name: Run multiline script
+      run: |
+        echo "This is a multiline script."
+        echo "It can have multiple commands."
+        echo "For example, you can run shell commands here."
